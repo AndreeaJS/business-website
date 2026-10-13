@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Contact | Sorriso Photography</title>
+</head>
+
+<body>
+
+<header>
+  <section class="section-blush">
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">
+          <img src="/images/sorriso-logo-plum-gold-v2.png" alt="Sorriso Photography"/>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/work.html">Portfolio</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+</header>
+
+<main>
+  <section class="section-blush">
+    <div class="container">
+      <h1>Let's work together</h1>
+      <p>I'd love to hear about your plans and the moments you'd like to capture.</p>
+
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="6" placeholder="Tell me about your session"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+
+      <p id="status"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Sorriso Photography
+</footer>
+
+<script type="module" src="/src/contact.ts"></script>
+</body>
+</html>

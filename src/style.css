@@ -1,0 +1,389 @@
+:root {
+  --bg: #FAF9F7;
+  --text: #222222;
+  --accent: #5D394F;
+  --gold: #A58352;
+  --blush: #FAF2F4;
+  --white: #FFFFFF;
+  --max-width: 1200px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: auto;
+}
+
+header {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header > .section-blush {
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: var(--accent);
+}
+
+nav a.active {
+  color: var(--accent);
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 120vh;
+  height: 120vw;
+  object-fit: cover;
+  transform: rotate(90deg);
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  max-width: 720px;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #ddd;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  cursor: pointer;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+input, textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  display: block;
+  width: 145%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--white);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.gold-line {
+  width: 56px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1rem 0;
+}
+
+.section-blush {
+  background: var(--blush);
+}
+
+.about-title {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+p {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+/* Portfolio grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  overflow: hidden;
+  background: var(--blush);
+  border: 1px solid #E9DDE1;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.045);
+}
+
+.gallery-item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Responsive grid */
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 5rem;
+  background: rgba(25, 18, 23, 0.94);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 5px solid var(--blush);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: white;
+  background: rgba(93, 57, 79, 0.85);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  font: inherit;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background: var(--gold);
+  transform: scale(1.08);
+}
+
+.lightbox-close {
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev {
+  left: 1.25rem;
+}
+
+.lightbox-next {
+  right: 1.25rem;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 3.5rem 3.25rem;
+  }
+
+  .lightbox-image {
+    max-height: 75vh;
+  }
+
+  .lightbox-close,
+  .lightbox-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
+  }
+}
