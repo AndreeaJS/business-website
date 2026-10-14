@@ -37,10 +37,16 @@
       <p>I'd love to hear about your plans and the moments you'd like to capture.</p>
 
       <form id="contact-form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="6" placeholder="Tell me about your session"></textarea>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="E-mail Address" required>
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Tell me about your session ✨📷"
+          required
+        ></textarea>
         <button class="btn" type="submit">Send</button>
+        <p id="status" aria-live="polite"></p>
       </form>
 
       <p id="status"></p>
